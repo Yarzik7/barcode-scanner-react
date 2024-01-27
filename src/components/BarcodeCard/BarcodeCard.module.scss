@@ -1,0 +1,14 @@
+.barcodeCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: white;
+}
