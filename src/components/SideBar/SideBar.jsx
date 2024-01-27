@@ -1,18 +1,22 @@
-import Select from "../Select/Select";
-import { useEffect, useState } from "react";
-import scss from "./SideBar.module.scss";
+import Select from '../Select/Select';
+// import { useEffect, useState } from 'react';
+import { useVideoDevices } from 'hooks';
+import scss from './SideBar.module.scss';
 
 const SideBar = ({ deviceName, onSetScannDevice }) => {
-  const [videoDevicesList, setVideoDevicesList] = useState([]);
+  // const [videoDevicesList, setVideoDevicesList] = useState([]);
+  // console.log(videoDevicesList[0]);
 
-  useEffect(() => {
-    const getVideoDevices = async () => {
-      const res = await navigator.mediaDevices.enumerateDevices();
-      setVideoDevicesList(res.filter(({ kind }) => kind === "videoinput"));
-    };
+  // useEffect(() => {
+  //   const getVideoDevices = async () => {
+  //     const res = await navigator.mediaDevices.enumerateDevices();
+  //     setVideoDevicesList(res.filter(({ kind }) => kind === 'videoinput'));
+  //   };
 
-    getVideoDevices();
-  }, []);
+  //   getVideoDevices();
+  // }, []);
+
+  const videoDevicesList = useVideoDevices();
 
   return (
     <aside className={scss.sidebar}>
