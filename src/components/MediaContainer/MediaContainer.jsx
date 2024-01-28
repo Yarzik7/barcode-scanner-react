@@ -1,4 +1,5 @@
 import Scanner from '../Scanner/Scanner';
+// import Loader from 'components/Loader/Loader';
 import scss from './MediaContainer.module.scss';
 // import { useVideoDevices } from 'hooks';
 
@@ -24,6 +25,7 @@ const MediaContainer = ({ isStartScann, deviceId, onSetBarcode }) => {
         ))}
       </ul> */}
       {isStartScann && <Scanner onSetBarcode={onSetBarcode} deviceId={deviceId} />}
+      {/* {true && <Loader />} */}
     </div>
   );
 };

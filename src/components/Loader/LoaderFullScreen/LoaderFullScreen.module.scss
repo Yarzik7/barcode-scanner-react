@@ -1,0 +1,35 @@
+.fullScreenLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fullScreenLoaderSpinner {
+  display: block;
+  width: 20vw;
+  height: 20vw;
+
+  border: 7px solid rgb(89, 204, 21, 0.5);
+  border-top-color: rgb(89, 204, 21);
+  border-radius: 50%;
+  animation: spinner 1000ms linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
