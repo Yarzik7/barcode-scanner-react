@@ -1,12 +1,18 @@
 import Application from 'components/Application/Application';
 import Header from 'components/Header/Header';
 import ControlPanel from 'components/ControlPanel/ControlPanel';
-import { useState } from 'react';
+import { useVideoDevices } from 'hooks';
+import { useState, useEffect } from 'react';
 
 function App() {
-  const [deviceId, setDeviceId] = useState('');
+  const { betterDeviceId } = useVideoDevices();
+  const [deviceId, setDeviceId] = useState(() => betterDeviceId);
   const [deviceName, setDeviceName] = useState('');
   const [isStartScann, setIsScannStart] = useState(false);
+
+  useEffect(() => {
+    setDeviceId(betterDeviceId);
+  }, [betterDeviceId]);
 
   const onSetScannDevice = (deviceId, deviceName) => {
     setDeviceId(deviceId);
