@@ -1,5 +1,6 @@
 import Scanner from '../Scanner/Scanner';
-// import Loader from 'components/Loader/Loader';
+import { useState, useRef } from 'react';
+import Loader from 'components/Loader/Loader';
 import scss from './MediaContainer.module.scss';
 // import { useVideoDevices } from 'hooks';
 
@@ -13,9 +14,16 @@ import scss from './MediaContainer.module.scss';
 
 const MediaContainer = ({ isStartScann, setIsScannStart, deviceId, onSetBarcode }) => {
   // const { videoDevicesList } = useVideoDevices();
+  const [isLoader, setIsLoader] = useState(false);
+  const [mediaContainerBg, setMediaContainerBg] = useState('');
+  const mediaContainerRef = useRef();
 
   return (
-    <div className={scss.mediaContainer}>
+    <div
+      ref={mediaContainerRef}
+      className={scss.mediaContainer}
+      style={{ backgroundImage: `url(${mediaContainerBg})` }}
+    >
       {/* <ul style={{ overflow: 'scroll', height: '100%' }}>
         {[...videoDevicesList].map((dev, idx) => (
           <li key={idx} style={styles}>
@@ -29,9 +37,11 @@ const MediaContainer = ({ isStartScann, setIsScannStart, deviceId, onSetBarcode 
           onSetBarcode={onSetBarcode}
           deviceId={deviceId}
           setIsScannStart={setIsScannStart}
+          setIsLoader={setIsLoader}
+          setMediaContainerBg={setMediaContainerBg}
         />
       )}
-      {/* {true && <Loader />} */}
+      {isLoader && <Loader />}
     </div>
   );
 };

@@ -15,7 +15,7 @@ const App = ({ isStartScann, setIsScannStart, deviceId }) => {
         setIsScannStart={setIsScannStart}
       />
       <BarcodeContainer barcode={barcode} />
-      <canvas id="canva" style={{ position: 'absolute', zIndex: -1 }}></canvas>
+      {/* <canvas id="canva" style={{ position: 'absolute', zIndex: -1 }}></canvas> */}
     </Section>
   );
 };
