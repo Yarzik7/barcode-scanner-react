@@ -11,7 +11,7 @@ import scss from './MediaContainer.module.scss';
 //   overflow: 'hidden',
 // };
 
-const MediaContainer = ({ isStartScann, deviceId, onSetBarcode }) => {
+const MediaContainer = ({ isStartScann, setIsScannStart, deviceId, onSetBarcode }) => {
   // const { videoDevicesList } = useVideoDevices();
 
   return (
@@ -24,7 +24,13 @@ const MediaContainer = ({ isStartScann, deviceId, onSetBarcode }) => {
           </li>
         ))}
       </ul> */}
-      {isStartScann && <Scanner onSetBarcode={onSetBarcode} deviceId={deviceId} />}
+      {isStartScann && (
+        <Scanner
+          onSetBarcode={onSetBarcode}
+          deviceId={deviceId}
+          setIsScannStart={setIsScannStart}
+        />
+      )}
       {/* {true && <Loader />} */}
     </div>
   );

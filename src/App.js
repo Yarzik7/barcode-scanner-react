@@ -28,7 +28,11 @@ function App() {
     <>
       <Header onSetScannDevice={onSetScannDevice} deviceName={deviceName} />
       <main>
-        <Application deviceId={deviceId} isStartScann={isStartScann} />
+        <Application
+          deviceId={deviceId}
+          isStartScann={isStartScann}
+          setIsScannStart={setIsScannStart}
+        />
       </main>
       <ControlPanel setIsScannStart={onToggleStartScann} />
     </>
