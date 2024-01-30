@@ -33,6 +33,8 @@ function App() {
           deviceId={deviceId}
           isStartScann={isStartScann}
           setIsScannStart={setIsScannStart}
+          onSetScannDevice={onSetScannDevice}
+          deviceName={deviceName}
           mode={mode}
         />
       </main>

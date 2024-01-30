@@ -2,8 +2,8 @@
 
 import Container from '../Container/Container';
 import Heading from '../Heading/Heading';
-import Button from '../Button/Button';
-import Icon from '../Icon/Icon';
+// import Button from '../Button/Button';
+// import Icon from '../Icon/Icon';
 import Modal from '../Modal/Modal';
 import SideBar from '../SideBar/SideBar';
 import { useState } from 'react';

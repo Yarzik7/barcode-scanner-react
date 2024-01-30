@@ -6,7 +6,7 @@ import Settings from 'components/Settings/Settings';
 import { useState } from 'react';
 import scss from './Application.module.scss';
 
-const App = ({ isStartScann, setIsScannStart, deviceId, mode }) => {
+const App = ({ isStartScann, setIsScannStart, deviceId, mode, onSetScannDevice, deviceName }) => {
   const [barcode, setBarcode] = useState('');
   return (
     <Section className={scss.appSection} containerClassName={scss.appContainer}>
@@ -27,7 +27,9 @@ const App = ({ isStartScann, setIsScannStart, deviceId, mode }) => {
         />
       )}
 
-      {mode === 'settings' && <Settings />}
+      {mode === 'settings' && (
+        <Settings onSetScannDevice={onSetScannDevice} deviceName={deviceName} />
+      )}
     </Section>
   );
 };
