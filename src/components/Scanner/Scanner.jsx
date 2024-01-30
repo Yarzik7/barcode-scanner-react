@@ -7,8 +7,7 @@ const Scanner = ({ deviceId, onSetBarcode, setIsScannStart, setIsLoader, setMedi
     onSetBarcode(barcode);
     setIsLoader(true);
     setMediaContainerBg(src);
-    // setIsScannStart(false);
-    setTimeout(() => setIsLoader(false), 4000);
+    setTimeout(() => setIsLoader(false), 1300);
   };
 
   useQuaggaScanner(deviceId, handleSetBarCode);

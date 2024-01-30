@@ -58,9 +58,9 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
       canvas.width = video?.videoWidth;
       canvas.height = video?.videoHeight;
 
-      const ctx = canvas.getContext('2d');
+      const canvasCtx = canvas.getContext('2d');
 
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvasCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
       onSetBarcode(result.codeResult.code, canvas.toDataURL('image/jpeg'));
     };
