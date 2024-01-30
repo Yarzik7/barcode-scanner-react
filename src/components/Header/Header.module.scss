@@ -2,17 +2,19 @@
   width: 100%;
   height: 50px;
 
-  border-bottom: 2px solid grey;
+  color: var(--secondary-text-color);
+
+  background-color: var(--accent-color);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .heading {
-  margin-left: auto;
+  margin: 0 auto;
   text-transform: uppercase;
 }
 
 .headerContainer {
   display: flex;
-  // justify-content: center;
   align-items: center;
   height: 100%;
 }

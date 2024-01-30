@@ -1,4 +1,5 @@
 body {
+  color: var(--primary-text-color);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -33,7 +34,12 @@ main {
 }
 
 button {
+  border: none;
   cursor: pointer;
+}
+
+button:focus {
+  outline: 1px solid var(--primary-text-color);
 }
 
 #scanner-container video {

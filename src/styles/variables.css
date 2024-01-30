@@ -1,0 +1,13 @@
+:root {
+  /* colors */
+  --accent-color: #1ca80b;
+  --border-color: rgba(0, 0, 0, 0.5);
+  --primary-text-color: #121212;
+  --secondary-text-color: #fff;
+
+  /* sizes */
+  --primary-border-radius: 10px;
+  --rounded-border-radius: 50%;
+  --header-height: 50px;
+  --control-panel-height: 50px;
+}

@@ -1,13 +1,26 @@
-import Button from "../Button/Button";
-import { classNameJoin } from "utils";
-import scss from "./ControlPanel.module.scss";
+import Button from '../Button/Button';
+import Icon from 'components/Icon/Icon';
+import { classNameJoin } from 'utils';
+import scss from './ControlPanel.module.scss';
 
-const ControlPanel = ({ setIsScannStart, className }) => {
-  const onScannStart = () => setIsScannStart();
+const ControlPanel = ({ setIsScannStart, setMode, className }) => {
+  const onScannStart = () => {
+    setMode('barcode-scanner');
+    setIsScannStart();
+  };
+
+  const onSettingsMode = () => {
+    setMode('settings');
+  };
 
   return (
     <div className={classNameJoin(scss.controlPanel, className)}>
-      <Button onClick={onScannStart}>S</Button>
+      <Button onClick={onScannStart}>
+        <Icon iconName="barcode" />
+      </Button>
+      <Button onClick={onSettingsMode}>
+        <Icon iconName="settings" />
+      </Button>
     </div>
   );
 };

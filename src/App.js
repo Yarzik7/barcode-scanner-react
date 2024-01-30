@@ -9,6 +9,7 @@ function App() {
   const [deviceId, setDeviceId] = useState(() => betterDeviceId);
   const [deviceName, setDeviceName] = useState('');
   const [isStartScann, setIsScannStart] = useState(false);
+  const [mode, setMode] = useState('');
 
   useEffect(() => {
     setDeviceId(betterDeviceId);
@@ -32,9 +33,10 @@ function App() {
           deviceId={deviceId}
           isStartScann={isStartScann}
           setIsScannStart={setIsScannStart}
+          mode={mode}
         />
       </main>
-      <ControlPanel setIsScannStart={onToggleStartScann} />
+      <ControlPanel setIsScannStart={onToggleStartScann} setMode={setMode} />
     </>
   );
 }
