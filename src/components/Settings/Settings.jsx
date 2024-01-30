@@ -11,6 +11,7 @@ const Settings = ({ deviceName, onSetScannDevice }) => {
           onSetScannDevice={onSetScannDevice}
           deviceName={deviceName}
           videoDevicesList={videoDevicesList}
+          label="Camera"
         />
       </div>
     </div>

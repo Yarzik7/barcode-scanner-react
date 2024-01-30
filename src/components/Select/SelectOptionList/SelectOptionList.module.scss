@@ -1,7 +1,9 @@
 .selectOptionListContainer {
+  position: absolute;
+  top: calc(101% + 5px);
+
   width: 100%;
   max-height: 120px;
-  margin-top: 5px;
   padding: 5px;
   border: 1px solid grey;
   border-radius: 10px;

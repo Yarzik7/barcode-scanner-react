@@ -1,4 +1,5 @@
 body {
+  font-size: 1.1rem;
   color: var(--primary-text-color);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
@@ -40,6 +41,15 @@ button {
 
 button:focus {
   outline: 1px solid var(--primary-text-color);
+}
+
+input {
+  /* border: none; */
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid var(--accent-color);
 }
 
 #scanner-container video {
