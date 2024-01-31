@@ -1,8 +1,12 @@
-import scss from "./Button.module.scss";
+import { classNameJoin } from 'utils';
+import scss from './Button.module.scss';
 
-const Button = ({ onClick, children }) => {
+const Button = ({ onClick, className = '', children, isActive }) => {
   return (
-    <button className={scss.button} onClick={onClick}>
+    <button
+      className={classNameJoin(scss.button, className) + (isActive ? 'active' : '')}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

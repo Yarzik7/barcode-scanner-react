@@ -1,9 +1,14 @@
 .controlPanel {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 15px;
   width: 100%;
-  height: 50px;
+  height: var(--control-panel-height);
   border-top: 2px solid var(--border-color);
+}
+
+.controlPanelContentBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 5px;
 }

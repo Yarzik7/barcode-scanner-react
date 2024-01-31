@@ -18,6 +18,12 @@ code {
   margin: 0;
 }
 
+/* body {
+  font-size: 1.1rem;
+  color: var(--primary-text-color);
+  margin: 0;
+} */
+
 html,
 body,
 #root {
@@ -31,7 +37,7 @@ ul {
 
 main {
   width: 100%;
-  height: calc(100dvh - 100px);
+  height: calc(100dvh - 120px);
 }
 
 button {
@@ -67,4 +73,35 @@ input:focus {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button.indicator {
+  position: absolute;
+  top: -50%;
+  left: 5px;
+
+  /* width: 55px;
+  height: 55px; */
+
+  border: 6px solid transparent;
+  transition: transform 200ms linear;
+}
+
+button.active:nth-child(1) ~ .indicator {
+  transform: translateX(calc(60px * 0));
+}
+button.active:nth-child(2) ~ .indicator {
+  transform: translateX(calc(60px * 1 + (6px * 2)));
+}
+button.active:nth-child(3) ~ .indicator {
+  transform: translateX(calc(60px * 2 + (6px * 4) + 1px));
+}
+button.active:nth-child(4) ~ .indicator {
+  transform: translateX(calc(60px * 3 + (6px * 6) + 2px));
+}
+button.active:nth-child(5) ~ .indicator {
+  transform: translateX(calc(60px * 4 + (6px * 8) + 3px));
+}
+button.active:nth-child(6) ~ .indicator {
+  transform: translateX(calc(60px * 5 + (6px * 10) + 4px));
 }
