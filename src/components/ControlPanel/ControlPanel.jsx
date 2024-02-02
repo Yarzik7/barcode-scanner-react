@@ -16,9 +16,14 @@ const ControlPanel = ({ setIsScannStart, setMode, className = '' }) => {
     setMode('settings');
   };
 
+  const onBarcodeListScannMode = () => {
+    setMode('barcode list scann');
+  };
+
   const buttonsList = [
     { iconName: 'barcode', onClick: onScannStart },
     { iconName: 'settings', onClick: onSettingsMode },
+    { iconName: 'barcode list scann', onClick: onBarcodeListScannMode },
   ];
 
   return (
