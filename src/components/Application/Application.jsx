@@ -10,13 +10,6 @@ const App = ({ isStartScann, setIsScannStart, deviceId, mode, onSetScannDevice, 
   const [barcode, setBarcode] = useState('');
   return (
     <Section className={scss.appSection} containerClassName={scss.appContainer}>
-      {/* <MediaContainer
-        onSetBarcode={setBarcode}
-        deviceId={deviceId}
-        isStartScann={isStartScann}
-        setIsScannStart={setIsScannStart}
-      />
-      <BarcodeContainer barcode={barcode} /> */}
       {mode === 'barcode-scanner' && (
         <BarcodeScanner
           onSetBarcode={setBarcode}
