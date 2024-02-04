@@ -1,6 +1,4 @@
 import Section from '../Section/Section';
-// import MediaContainer from '../MediaContainer/MediaContainer';
-// import BarcodeContainer from '../BarcodeContainer/BarcodeContainer';
 import BarcodeScanner from 'components/BarcodeScanner/BarcodeScanner';
 import Settings from 'components/Settings/Settings';
 import { useState } from 'react';
