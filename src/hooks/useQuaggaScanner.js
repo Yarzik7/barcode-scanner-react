@@ -30,19 +30,7 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
           halfSample: true,
         },
         decoder: {
-          readers: [
-            'ean_reader',
-            'upc_reader',
-            'code_128_reader',
-            'ean_8_reader',
-            // 'code_39_reader',
-            // 'code_39_vin_reader',
-            // 'codabar_reader',
-            // 'upc_e_reader',
-            // 'i2of5_reader',
-            // '2of5_reader',
-            // 'code_93_reader',
-          ],
+          readers: ['ean_reader', 'upc_reader', 'code_128_reader', 'ean_8_reader'],
         },
       },
       function (err) {
@@ -56,6 +44,8 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
 
     const onBarcodeDetected = result => {
       const video = document.querySelector('#scanner-container video');
+      if (!video) return;
+      
       const canvas = document.createElement('canvas');
 
       canvas.width = video?.videoWidth;
@@ -64,7 +54,6 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
       const canvasCtx = canvas.getContext('2d');
 
       canvasCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
       onSetBarcode(result.codeResult.code, canvas.toDataURL('image/jpeg'));
     };
 
