@@ -10,9 +10,10 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
           type: 'LiveStream',
           target: document.getElementById('scanner-container'),
           constraints: {
-            width: 640,
-            height: 480,
+            width: 800,
+            height: 1080,
             facingMode: 'environment',
+            aspectRatio: 16 / 9,
             deviceId,
           },
           area: {
@@ -22,6 +23,8 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
             bottom: '35%',
           },
         },
+        numOfWorkers: 4,
+        frequency: 20,
         locator: {
           patchSize: 'medium',
           halfSample: true,
