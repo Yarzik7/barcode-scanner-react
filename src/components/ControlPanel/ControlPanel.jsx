@@ -1,5 +1,6 @@
 import Button from '../Button/Button';
 import Icon from 'components/Icon/Icon';
+import Container from 'components/Container/Container';
 import { useState } from 'react';
 import { classNameJoin } from 'utils';
 import scss from './ControlPanel.module.scss';
@@ -20,20 +21,20 @@ const ControlPanel = ({ setIsScannStart, setMode, className = '' }) => {
     setMode('create code');
   };
 
-  // const onBarcodeListScannMode = () => {
-  //   setMode('barcode list scann');
-  // };
+  const onHome = () => {
+    setMode('home');
+  };
 
   const buttonsList = [
+    { iconName: 'home', onClick: onHome },
     { iconName: 'codescanner', onClick: onScannStart },
     { iconName: 'createcode', onClick: onCreateCode },
     { iconName: 'settings', onClick: onSettingsMode },
-    // { iconName: 'barcode list scann', onClick: onBarcodeListScannMode }, createcode
   ];
 
   return (
     <div className={classNameJoin(scss.controlPanel, className)}>
-      <div className={scss.controlPanelContentBox}>
+      <Container className={scss.controlPanelContentBox}>
         {buttonsList.map(({ iconName, onClick }, idx) => (
           <Button
             key={idx}
@@ -46,7 +47,7 @@ const ControlPanel = ({ setIsScannStart, setMode, className = '' }) => {
             <Icon iconName={iconName} />
           </Button>
         ))}
-      </div>
+      </Container>
     </div>
   );
 };

@@ -13,8 +13,7 @@
   border-radius: 50%;
   background-color: transparent;
 
-  &:focus {
-    color: var(--accent-color);
+  &.active {
     fill: var(--accent-color);
     stroke: var(--accent-color);
   }

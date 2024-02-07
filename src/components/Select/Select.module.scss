@@ -23,14 +23,27 @@
 .chevron {
   position: absolute;
   right: 8px;
-  bottom: 10px;
+  bottom: 17.5px;
+  transform: translateY(50%);
 
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10px;
-  height: 10px;
-  font-size: 20px;
+  width: 24px;
+  height: 24px;
 
   cursor: pointer;
+
+  & .icon {
+    width: 100%;
+    height: 100%;
+
+    transition: transform var(--timing-function) var(--transition-duration);
+    stroke: var(--primary-text-color);
+    fill: none;
+
+    &.isOpened {
+      transform: rotate(-180deg);
+    }
+  }
 }

@@ -1,5 +1,7 @@
 import SelectOptionList from './SelectOptionList/SelectOptionList';
+import Icon from 'components/Icon/Icon';
 import { useState, useId } from 'react';
+import { classNameJoin } from 'utils';
 import scss from './Select.module.scss';
 
 const Select = ({ videoDevicesList, deviceName, onSetScannDevice, label = 'label' }) => {
@@ -24,7 +26,10 @@ const Select = ({ videoDevicesList, deviceName, onSetScannDevice, label = 'label
         onClick={onToggleShowOptionList}
       />
       <span className={scss.chevron} onClick={onToggleShowOptionList}>
-        ^
+        <Icon
+          iconName="chevron"
+          className={classNameJoin(scss.icon, showOptionList ? scss.isOpened : '')}
+        />
       </span>
       {showOptionList && (
         <SelectOptionList

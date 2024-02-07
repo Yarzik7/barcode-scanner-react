@@ -1,3 +1,3 @@
 export const classNameJoin = (...classNames) => {
-  return [...classNames].join(" ");
+  return [...classNames].join(' ');
 };
