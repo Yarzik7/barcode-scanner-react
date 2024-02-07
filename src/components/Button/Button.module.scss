@@ -2,14 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 
   font-size: 1.2rem;
-  color: var(--secondary-text-color);
-  fill: var(--secondary-text-color);
-  stroke: var(--secondary-text-color);
+  color: var(--border-color);
+  fill: var(--border-color);
+  stroke: var(--border-color);
 
   border-radius: 50%;
-  background-color: var(--accent-color);
+  background-color: transparent;
+
+  &:focus {
+    color: var(--accent-color);
+    fill: var(--accent-color);
+    stroke: var(--accent-color);
+  }
 }

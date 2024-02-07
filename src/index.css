@@ -40,7 +40,7 @@ button {
 }
 
 button:focus {
-  outline: 1px solid var(--primary-text-color);
+  outline: 2px solid var(--accent-color);
 }
 
 input {
@@ -69,18 +69,18 @@ a {
   text-decoration: none;
 }
 
-button.indicator {
+/* button.indicator {
   position: absolute;
   top: -50%;
-  left: 5px;
+  left: 5px; */
 
-  /* width: 55px;
+/* width: 55px;
   height: 55px; */
 
-  border: 6px solid transparent;
+/* border: 6px solid transparent;
   transition: transform 200ms linear;
-}
-
+} */
+/* 
 button.active:nth-child(1) ~ .indicator {
   transform: translateX(calc(60px * 0));
 }
@@ -98,4 +98,4 @@ button.active:nth-child(5) ~ .indicator {
 }
 button.active:nth-child(6) ~ .indicator {
   transform: translateX(calc(60px * 5 + (6px * 10)));
-}
+} */
