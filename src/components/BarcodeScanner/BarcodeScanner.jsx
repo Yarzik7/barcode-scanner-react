@@ -3,8 +3,9 @@ import BarcodeContainer from '../BarcodeContainer/BarcodeContainer';
 // import scss from './BarcodeScanner.scss';
 
 const BarcodeScanner = ({ onSetBarcode, deviceId, isStartScann, setIsScannStart, barcode }) => {
+  
   return (
-    <>
+    <div>
       <MediaContainer
         onSetBarcode={onSetBarcode}
         deviceId={deviceId}
@@ -12,7 +13,7 @@ const BarcodeScanner = ({ onSetBarcode, deviceId, isStartScann, setIsScannStart,
         setIsScannStart={setIsScannStart}
       />
       <BarcodeContainer barcode={barcode} />
-    </>
+    </div>
   );
 };
 
