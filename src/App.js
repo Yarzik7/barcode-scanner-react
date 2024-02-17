@@ -9,7 +9,7 @@ function App() {
   const [deviceId, setDeviceId] = useState(() => betterDeviceId);
   const [deviceName, setDeviceName] = useState('');
   const [isStartScann, setIsScannStart] = useState(false);
-  const [mode, setMode] = useState('');
+  const [mode, setMode] = useState('home');
 
   useEffect(() => {
     setDeviceId(betterDeviceId);
