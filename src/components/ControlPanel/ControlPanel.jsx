@@ -6,8 +6,6 @@ import { classNameJoin } from 'utils';
 import scss from './ControlPanel.module.scss';
 
 const ControlPanel = ({ setIsScannStart, setMode, mode, className = '' }) => {
-  const [activeMode, setActiveMode] = useState(0);
-
   const onScannStart = () => {
     setMode('codescanner');
     setIsScannStart();
