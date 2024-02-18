@@ -47,7 +47,7 @@ const ControlPanel = ({ setIsScannStart, setMode, mode, className = '' }) => {
             // mode={mode}
             isActive={buttonMode === mode}
           >
-            <Icon iconName={mode} />
+            <Icon iconName={buttonMode} />
           </Button>
         ))}
       </Container>
