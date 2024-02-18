@@ -8,7 +8,7 @@ const App = ({ isStartScann, setIsScannStart, deviceId, mode, onSetScannDevice, 
   const [barcode, setBarcode] = useState('');
   return (
     <Section className={scss.appSection} containerClassName={scss.appContainer}>
-      {mode === 'barcode-scanner' && (
+      {mode === 'codescanner' && (
         <BarcodeScanner
           onSetBarcode={setBarcode}
           deviceId={deviceId}

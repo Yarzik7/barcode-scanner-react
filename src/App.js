@@ -39,7 +39,7 @@ function App() {
           mode={mode}
         />
       </main>
-      <ControlPanel setIsScannStart={onToggleStartScann} setMode={setMode} />
+      <ControlPanel setIsScannStart={onToggleStartScann} setMode={setMode} mode={mode} />
     </>
   );
 }

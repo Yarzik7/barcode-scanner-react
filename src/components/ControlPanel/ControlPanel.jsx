@@ -5,11 +5,11 @@ import { useState } from 'react';
 import { classNameJoin } from 'utils';
 import scss from './ControlPanel.module.scss';
 
-const ControlPanel = ({ setIsScannStart, setMode, className = '' }) => {
+const ControlPanel = ({ setIsScannStart, setMode, mode, className = '' }) => {
   const [activeMode, setActiveMode] = useState(0);
 
   const onScannStart = () => {
-    setMode('barcode-scanner');
+    setMode('codescanner');
     setIsScannStart();
   };
 
@@ -18,33 +18,36 @@ const ControlPanel = ({ setIsScannStart, setMode, className = '' }) => {
   };
 
   const onCreateCode = () => {
-    setMode('create code');
+    setMode('createcode');
   };
 
   const onHome = () => {
     setMode('home');
   };
 
+  const onSetMode = mode => setMode(mode);
+
   const buttonsList = [
-    { iconName: 'home', onClick: onHome },
-    { iconName: 'codescanner', onClick: onScannStart },
-    { iconName: 'createcode', onClick: onCreateCode },
-    { iconName: 'settings', onClick: onSettingsMode },
+    { buttonMode: 'home', onClick: onHome },
+    { buttonMode: 'codescanner', onClick: onScannStart },
+    { buttonMode: 'createcode', onClick: onCreateCode },
+    { buttonMode: 'settings', onClick: onSettingsMode },
   ];
 
   return (
     <div className={classNameJoin(scss.controlPanel, className)}>
       <Container className={scss.controlPanelContentBox}>
-        {buttonsList.map(({ iconName, onClick }, idx) => (
+        {buttonsList.map(({ buttonMode, onClick }, idx) => (
           <Button
             key={idx}
             onClick={() => {
-              setActiveMode(idx);
-              onClick();
+              // setActiveMode(idx);
+              onSetMode(buttonMode);
             }}
-            isActive={activeMode === idx}
+            // mode={mode}
+            isActive={buttonMode === mode}
           >
-            <Icon iconName={iconName} />
+            <Icon iconName={mode} />
           </Button>
         ))}
       </Container>
