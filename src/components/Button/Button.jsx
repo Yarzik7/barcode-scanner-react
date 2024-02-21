@@ -1,8 +1,7 @@
 import { classNameJoin } from 'utils';
 import scss from './Button.module.scss';
 
-const Button = ({ onClick, className = '', children, isActive, style, mode }) => {
-  // const isActive2 = 1;
+const Button = ({ onClick, className = '', children, isActive, style}) => {
   return (
     <button
       className={classNameJoin(scss.button, className) + (isActive ? scss.active : '')}

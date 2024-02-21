@@ -1,7 +1,6 @@
 import Button from '../Button/Button';
 import Icon from 'components/Icon/Icon';
 import Container from 'components/Container/Container';
-import { useState } from 'react';
 import { classNameJoin } from 'utils';
 import scss from './ControlPanel.module.scss';
 
@@ -39,10 +38,8 @@ const ControlPanel = ({ setIsScannStart, setMode, mode, className = '' }) => {
           <Button
             key={idx}
             onClick={() => {
-              // setActiveMode(idx);
               onSetMode(buttonMode);
             }}
-            // mode={mode}
             isActive={buttonMode === mode}
           >
             <Icon iconName={buttonMode} />
