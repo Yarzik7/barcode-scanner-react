@@ -9,15 +9,13 @@ const MediaContainer = ({ isStartScann, setIsScannStart, deviceId, onSetBarcode 
 
   return (
     <div className={scss.mediaContainer} style={{ backgroundImage: `url(${mediaContainerBg})` }}>
-      {isStartScann && (
-        <Scanner
-          onSetBarcode={onSetBarcode}
-          deviceId={deviceId}
-          setIsScannStart={setIsScannStart}
-          setIsLoader={setIsLoader}
-          setMediaContainerBg={setMediaContainerBg}
-        />
-      )}
+      <Scanner
+        onSetBarcode={onSetBarcode}
+        deviceId={deviceId}
+        setIsScannStart={setIsScannStart}
+        setIsLoader={setIsLoader}
+        setMediaContainerBg={setMediaContainerBg}
+      />
       {isLoader && <Loader />}
     </div>
   );
