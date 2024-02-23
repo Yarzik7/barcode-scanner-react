@@ -6,29 +6,19 @@ import scss from './ControlPanel.module.scss';
 
 const ControlPanel = ({ setIsScannStart, setMode, mode, className = '' }) => {
   const onScannStart = () => {
-    setMode('codescanner');
     setIsScannStart();
   };
 
-  const onSettingsMode = () => {
-    setMode('settings');
+  const onSetMode = (mode, onClick = () => {}) => {
+    setMode(mode);
+    onClick();
   };
-
-  const onCreateCode = () => {
-    setMode('createcode');
-  };
-
-  const onHome = () => {
-    setMode('home');
-  };
-
-  const onSetMode = mode => setMode(mode);
 
   const buttonsList = [
-    { buttonMode: 'home', onClick: onHome },
+    { buttonMode: 'home' },
     { buttonMode: 'codescanner', onClick: onScannStart },
-    { buttonMode: 'createcode', onClick: onCreateCode },
-    { buttonMode: 'settings', onClick: onSettingsMode },
+    { buttonMode: 'createcode' },
+    { buttonMode: 'settings' },
   ];
 
   return (
@@ -38,7 +28,7 @@ const ControlPanel = ({ setIsScannStart, setMode, mode, className = '' }) => {
           <Button
             key={idx}
             onClick={() => {
-              onSetMode(buttonMode);
+              onSetMode(buttonMode, onClick);
             }}
             isActive={buttonMode === mode}
           >
