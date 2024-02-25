@@ -1,6 +1,11 @@
 .selectOption {
+  padding: 0 5px;
+
   cursor: pointer;
+  transition: transform var(--timing-function) var(--transition-duration);
+
   &:hover {
-    background-color: aqua;
+    color: var(--secondary-text-color);
+    background-color: var(--accent-color);
   }
 }
