@@ -1,14 +1,14 @@
-import scss from "./SelectOption.module.scss";
+import scss from './SelectOption.module.scss';
 
-export const SelectOption = ({ setSelect, onClick, content }) => {
+export const SelectOption = ({ setSelect, onClick, content: { deviceId, label } }) => {
   const onSetSelectValue = () => {
-    setSelect(content.deviceId, content.label);
+    setSelect(deviceId, label);
     onClick();
   };
-  
+
   return (
     <li className={scss.selectOption} onClick={onSetSelectValue}>
-      {content.label}
+      {label}
     </li>
   );
 };
