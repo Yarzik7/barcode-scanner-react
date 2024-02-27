@@ -19,7 +19,7 @@ const Select = ({ videoDevicesList, deviceName, onSetScannDevice, label = 'label
         id={selectId}
         name="select"
         value={deviceName}
-        className={scss.select}
+        className={classNameJoin(scss.select, showOptionList ? scss.isOpenSelectList : '')}
         placeholder="Select"
         aria-label="select"
         readOnly
