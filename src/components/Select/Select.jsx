@@ -20,7 +20,7 @@ const Select = ({ videoDevicesList, deviceName, onSetScannDevice, label = 'label
         name="select"
         value={deviceName}
         className={classNameJoin(scss.select, showOptionList ? scss.isOpenSelectList : '')}
-        placeholder="Select"
+        placeholder="Camera select"
         aria-label="select"
         readOnly
         onClick={onToggleShowOptionList}

@@ -45,10 +45,6 @@ input {
   outline: none;
 }
 
-/* input:focus {
-  border: 1px solid var(--accent-color);
-} */
-
 #scanner-container video {
   position: absolute;
   top: 0;
