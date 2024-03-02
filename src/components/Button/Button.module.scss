@@ -13,6 +13,9 @@
   border-radius: 50%;
   background-color: transparent;
 
+  transition: fill var(--timing-function) var(--transition-duration),
+    stroke var(--timing-function) var(--transition-duration);
+
   &.active {
     fill: var(--accent-color);
     stroke: var(--accent-color);

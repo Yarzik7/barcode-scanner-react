@@ -2,7 +2,8 @@
   padding: 0 5px;
 
   cursor: pointer;
-  transition: transform var(--timing-function) var(--transition-duration);
+  transition: color var(--timing-function) var(--transition-duration),
+    background-color var(--timing-function) var(--transition-duration);
 
   &:hover {
     color: var(--secondary-text-color);

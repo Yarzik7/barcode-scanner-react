@@ -44,6 +44,8 @@ button {
 input {
   border: 1px solid var(--border-color);
   outline: none;
+
+  transition: border var(--timing-function) var(--transition-duration);
 }
 
 #scanner-container video {

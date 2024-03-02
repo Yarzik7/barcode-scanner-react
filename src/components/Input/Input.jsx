@@ -1,7 +1,7 @@
 import { useId } from 'react';
 import scss from './Input.module.scss';
 
-const Input = ({ label = 'label', placeholder = 'input' }) => {
+const Input = ({ label = 'label', placeholder = 'input', name = 'input', onChange }) => {
   const inputId = useId();
 
   return (
@@ -9,7 +9,13 @@ const Input = ({ label = 'label', placeholder = 'input' }) => {
       <label htmlFor={inputId} className={scss.label}>
         {label}
       </label>
-      <input id={inputId} className={scss.input} placeholder={placeholder} />
+      <input
+        id={inputId}
+        name={name}
+        className={scss.input}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
     </div>
   );
 };
