@@ -1,0 +1,20 @@
+.inputContainer {
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  height: 35px;
+  padding: 0 10px;
+
+  border-radius: var(--primary-border-radius);
+  cursor: pointer;
+
+  &:focus {
+    border: 1px solid var(--accent-color);
+  }
+}

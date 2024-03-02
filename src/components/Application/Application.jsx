@@ -1,6 +1,7 @@
 import Section from '../Section/Section';
 import BarcodeScanner from 'components/BarcodeScanner/BarcodeScanner';
 import Settings from 'components/Settings/Settings';
+import CreateBarcode from 'components/CreateBarcode/CreateBarcode';
 import { useState } from 'react';
 import scss from './Application.module.scss';
 
@@ -21,6 +22,8 @@ const App = ({ isStartScann, setIsScannStart, deviceId, mode, onSetScannDevice, 
       {mode === 'settings' && (
         <Settings onSetScannDevice={onSetScannDevice} deviceName={deviceName} />
       )}
+
+      {mode === 'createcode' && <CreateBarcode />}
     </Section>
   );
 };
