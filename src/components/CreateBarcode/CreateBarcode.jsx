@@ -1,4 +1,5 @@
 import Input from 'components/Input/Input';
+import BarcodeCard from 'components/BarcodeCard/BarcodeCard';
 import { useState } from 'react';
 import scss from './CreateBarcode.module.scss';
 
@@ -24,6 +25,9 @@ const CreateBarcode = () => {
         value={barcode}
         onChange={onChange}
       />
+      <div className={scss.barcodeContainer}>
+        <BarcodeCard barcode={barcode} />
+      </div>
     </div>
   );
 };
