@@ -1,5 +1,6 @@
 import JsBarcode from 'jsbarcode';
 import { useEffect } from 'react';
+import scss from './Barcode.module.scss';
 
 const Barcode = ({ barcode }) => {
   useEffect(() => {
@@ -11,7 +12,7 @@ const Barcode = ({ barcode }) => {
         fontSize: 27,
       });
   }, [barcode]);
-  return <svg id="barcode"></svg>;
+  return <svg id="barcode" className={scss.barcode}></svg>;
 };
 
 export default Barcode;

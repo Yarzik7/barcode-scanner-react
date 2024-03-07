@@ -1,10 +1,22 @@
 import Barcode from 'components/Barcode/Barcode';
+// import Button from 'components/Button/Button';
+import Link from 'components/Link/Link';
+import Icon from 'components/Icon/Icon';
 import scss from './BarcodeCard.module.scss';
 
 const BarcodeCard = ({ barcode }) => {
   return (
     <div id="card" className={scss.barcodeCard}>
-      <Barcode barcode={barcode} />
+      {barcode && (
+        <>
+          <div className={scss.barcodeCardMenu}>
+            <Link link={'https://www.google.com/search?q=' + barcode}>
+              <Icon iconName="search" />
+            </Link>
+          </div>
+          <Barcode barcode={barcode} />
+        </>
+      )}
     </div>
   );
 };
