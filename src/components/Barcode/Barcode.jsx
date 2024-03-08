@@ -7,7 +7,7 @@ const Barcode = ({ barcode }) => {
     barcode &&
       JsBarcode('#barcode', barcode, {
         width: 2,
-        height: '80%',
+        height: '60%',
         displayValue: true,
         fontSize: 27,
       });
