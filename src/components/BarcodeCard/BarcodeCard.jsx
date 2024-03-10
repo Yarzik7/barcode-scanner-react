@@ -11,7 +11,7 @@ const BarcodeCard = ({ barcode }) => {
         <>
           <div className={scss.barcodeCardMenu}>
             <Link link={'https://www.google.com/search?q=' + barcode}>
-              <Icon iconName="search" />
+              <Icon iconName="search" className={scss.barcodeCardMenuIcon} />
             </Link>
           </div>
           <Barcode barcode={barcode} />
