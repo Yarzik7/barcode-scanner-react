@@ -40,6 +40,8 @@ function App() {
           mode={mode}
         /> */}
         <p>{JSON.stringify(cap, null, 2)}</p>
+        <p>{deviceId}</p>
+        <p>{deviceName}</p>
       </main>
       <ControlPanel setIsScannStart={onToggleStartScann} setMode={setMode} mode={mode} />
     </>
