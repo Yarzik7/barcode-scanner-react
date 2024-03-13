@@ -1,12 +1,13 @@
-import Application from 'components/Application/Application';
+// import Application from 'components/Application/Application';
 import Header from 'components/Header/Header';
 import ControlPanel from 'components/ControlPanel/ControlPanel';
 import { useVideoDevices } from 'hooks';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const { betterDeviceId, betterDeviceName } = useVideoDevices();
+  const { betterDeviceId, betterDeviceName, cap } = useVideoDevices();
   const [deviceId, setDeviceId] = useState(() => betterDeviceId);
+  console.log(deviceId);
   const [deviceName, setDeviceName] = useState('');
   const [isStartScann, setIsScannStart] = useState(false);
   const [mode, setMode] = useState('home');
@@ -30,14 +31,15 @@ function App() {
     <>
       <Header onSetScannDevice={onSetScannDevice} deviceName={deviceName} />
       <main>
-        <Application
+        {/* <Application
           deviceId={deviceId}
           isStartScann={isStartScann}
           setIsScannStart={setIsScannStart}
           onSetScannDevice={onSetScannDevice}
           deviceName={deviceName}
           mode={mode}
-        />
+        /> */}
+        <p>{JSON.stringify(cap, null, 2)}</p>
       </main>
       <ControlPanel setIsScannStart={onToggleStartScann} setMode={setMode} mode={mode} />
     </>
