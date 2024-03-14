@@ -5,7 +5,7 @@ import { useVideoDevices } from 'hooks';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const { betterDeviceId, betterDeviceName } = useVideoDevices();
+  const { betterDeviceId, betterDeviceName, cap } = useVideoDevices();
   const [deviceId, setDeviceId] = useState(() => betterDeviceId);
   // console.log(deviceId);
   const [deviceName, setDeviceName] = useState('');
@@ -32,17 +32,17 @@ function App() {
     <>
       <Header onSetScannDevice={onSetScannDevice} deviceName={deviceName} />
       <main>
-        <Application
+        {/* <Application
           deviceId={deviceId}
           isStartScann={isStartScann}
           setIsScannStart={setIsScannStart}
           onSetScannDevice={onSetScannDevice}
           deviceName={deviceName}
           mode={mode}
-        />
-        {/* <p>{JSON.stringify(cap, null, 2)}</p>
+        /> */}
+        <p>{JSON.stringify(cap, null, 2)}</p>
         <p>{deviceId}</p>
-        <p>{deviceName}</p> */}
+        <p>{deviceName}</p>
       </main>
       <ControlPanel setIsScannStart={onStartScann} setMode={setMode} mode={mode} />
     </>
