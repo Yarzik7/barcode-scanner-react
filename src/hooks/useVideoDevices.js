@@ -18,15 +18,15 @@ export const useVideoDevices = () => {
         })
         .sort(({ aspectRatio: { max: maxP } }, { aspectRatio: { max: maxN } }) => maxN - maxP)[0];
 
-      const capb = videoinputDevices
-        .map(device => {
-          const capabilities = device.getCapabilities();
-          capabilities.label = device.label;
-          return capabilities;
-        })
-        .sort(({ aspectRatio: { max: maxP } }, { aspectRatio: { max: maxN } }) => maxN - maxP);
+      // const capb = videoinputDevices
+      //   .map(device => {
+      //     const capabilities = device.getCapabilities();
+      //     capabilities.label = device.label;
+      //     return capabilities;
+      //   })
+      //   .sort(({ aspectRatio: { max: maxP } }, { aspectRatio: { max: maxN } }) => maxN - maxP);
 
-      setCap(capb);
+      // setCap(capb);
       setVideoDevicesList(videoinputDevices);
       setBetterDeviceId(betterVideoDevice.deviceId);
       setBetterDeviceName(betterVideoDevice.label);

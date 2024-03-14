@@ -1,16 +1,16 @@
-// import Application from 'components/Application/Application';
+import Application from 'components/Application/Application';
 import Header from 'components/Header/Header';
 import ControlPanel from 'components/ControlPanel/ControlPanel';
 import { useVideoDevices } from 'hooks';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const { betterDeviceId, betterDeviceName, cap } = useVideoDevices();
+  const { betterDeviceId, betterDeviceName } = useVideoDevices();
   const [deviceId, setDeviceId] = useState(() => betterDeviceId);
-  console.log(deviceId);
+  // console.log(deviceId);
   const [deviceName, setDeviceName] = useState('');
   const [isStartScann, setIsScannStart] = useState(false);
-  const [mode, setMode] = useState('home');
+  const [mode, setMode] = useState('codescanner');
 
   useEffect(() => {
     setDeviceId(betterDeviceId);
@@ -25,25 +25,26 @@ function App() {
     }
   };
 
-  const onToggleStartScann = () => setIsScannStart(!isStartScann);
+  // const onToggleStartScann = () => setIsScannStart(!isStartScann);
+  const onStartScann = () => setIsScannStart(true);
 
   return (
     <>
       <Header onSetScannDevice={onSetScannDevice} deviceName={deviceName} />
       <main>
-        {/* <Application
+        <Application
           deviceId={deviceId}
           isStartScann={isStartScann}
           setIsScannStart={setIsScannStart}
           onSetScannDevice={onSetScannDevice}
           deviceName={deviceName}
           mode={mode}
-        /> */}
-        <p>{JSON.stringify(cap, null, 2)}</p>
+        />
+        {/* <p>{JSON.stringify(cap, null, 2)}</p>
         <p>{deviceId}</p>
-        <p>{deviceName}</p>
+        <p>{deviceName}</p> */}
       </main>
-      <ControlPanel setIsScannStart={onToggleStartScann} setMode={setMode} mode={mode} />
+      <ControlPanel setIsScannStart={onStartScann} setMode={setMode} mode={mode} />
     </>
   );
 }
