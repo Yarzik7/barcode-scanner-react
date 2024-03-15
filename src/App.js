@@ -24,8 +24,8 @@ function App() {
     }
   };
 
-  // const onToggleStartScann = () => setIsScannStart(!isStartScann);
-  const onStartScann = () => setIsScannStart(true);
+  const onToggleStartScann = () => setIsScannStart(!isStartScann);
+  // const onStartScann = () => setIsScannStart(true);
 
   return (
     <>
@@ -40,7 +40,7 @@ function App() {
           mode={mode}
         />
       </main>
-      <ControlPanel setIsScannStart={onStartScann} setMode={setMode} mode={mode} />
+      <ControlPanel setIsScannStart={onToggleStartScann} setMode={setMode} mode={mode} />
     </>
   );
 }
