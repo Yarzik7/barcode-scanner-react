@@ -4,7 +4,6 @@ export const useVideoDevices = () => {
   const [videoDevicesList, setVideoDevicesList] = useState([]);
   const [betterDeviceId, setBetterDeviceId] = useState('');
   const [betterDeviceName, setBetterDeviceName] = useState('');
-  const [cap, setCap] = useState([]);
 
   useEffect(() => {
     const getVideoDevices = async () => {
@@ -18,15 +17,6 @@ export const useVideoDevices = () => {
         })
         .sort(({ aspectRatio: { max: maxP } }, { aspectRatio: { max: maxN } }) => maxN - maxP)[0];
 
-      const capb = videoinputDevices
-        .map(device => {
-          const capabilities = device.getCapabilities();
-          capabilities.label = device.label;
-          return capabilities;
-        })
-        .sort(({ aspectRatio: { max: maxP } }, { aspectRatio: { max: maxN } }) => maxN - maxP);
-
-      setCap(capb);
       setVideoDevicesList(videoinputDevices);
       setBetterDeviceId(betterVideoDevice.deviceId);
       setBetterDeviceName(betterVideoDevice.label);
@@ -35,5 +25,5 @@ export const useVideoDevices = () => {
     getVideoDevices();
   }, []);
 
-  return { videoDevicesList, betterDeviceId, betterDeviceName, cap };
+  return { videoDevicesList, betterDeviceId, betterDeviceName };
 };
