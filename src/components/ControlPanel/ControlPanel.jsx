@@ -15,7 +15,6 @@ const ControlPanel = ({ setIsScannStart, setMode, mode, className = '' }) => {
   };
 
   const buttonsList = [
-    // { buttonMode: 'home' },
     { buttonMode: 'createcode' },
     { buttonMode: 'codescanner', onClick: onScannStart },
     { buttonMode: 'settings' },
@@ -28,6 +27,7 @@ const ControlPanel = ({ setIsScannStart, setMode, mode, className = '' }) => {
           <Button
             key={idx}
             onClick={() => {
+              if (buttonMode === mode) return;
               onSetMode(buttonMode, onClick);
             }}
             isActive={buttonMode === mode}

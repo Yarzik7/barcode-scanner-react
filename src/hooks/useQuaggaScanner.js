@@ -3,6 +3,10 @@ import { useEffect } from 'react';
 
 export const useQuaggaScanner = (deviceId, onSetBarcode) => {
   useEffect(() => {
+    if (!deviceId) {
+      return;
+    }
+    
     Quagga.init(
       {
         inputStream: {

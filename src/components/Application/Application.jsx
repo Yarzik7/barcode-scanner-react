@@ -5,7 +5,14 @@ import CreateBarcode from 'components/CreateBarcode/CreateBarcode';
 import { useState } from 'react';
 import scss from './Application.module.scss';
 
-const App = ({ isStartScann, setIsScannStart, deviceId, mode, onSetScannDevice, deviceName }) => {
+const Application = ({
+  isStartScann,
+  setIsScannStart,
+  deviceId,
+  mode,
+  onSetScannDevice,
+  deviceName,
+}) => {
   const [barcode, setBarcode] = useState('');
   return (
     <Section className={scss.appSection} containerClassName={scss.appContainer}>
@@ -28,4 +35,4 @@ const App = ({ isStartScann, setIsScannStart, deviceId, mode, onSetScannDevice, 
   );
 };
 
-export default App;
+export default Application;

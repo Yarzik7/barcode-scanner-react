@@ -8,7 +8,7 @@ function App() {
   const { betterDeviceId, betterDeviceName } = useVideoDevices();
   const [deviceId, setDeviceId] = useState(() => betterDeviceId);
   const [deviceName, setDeviceName] = useState('');
-  const [isStartScann, setIsScannStart] = useState(false);
+  const [isStartScann, setIsScannStart] = useState(true);
   const [mode, setMode] = useState('codescanner');
 
   useEffect(() => {
@@ -19,17 +19,13 @@ function App() {
   const onSetScannDevice = (deviceId, deviceName) => {
     setDeviceId(deviceId);
     setDeviceName(deviceName);
-    if (isStartScann) {
-      setIsScannStart(false);
-    }
   };
 
-  const onToggleStartScann = () => setIsScannStart(!isStartScann);
-  // const onStartScann = () => setIsScannStart(true);
+  const onStartScann = () => setIsScannStart(true);
 
   return (
     <>
-      <Header onSetScannDevice={onSetScannDevice} deviceName={deviceName} />
+      <Header />
       <main>
         <Application
           deviceId={deviceId}
@@ -40,7 +36,7 @@ function App() {
           mode={mode}
         />
       </main>
-      <ControlPanel setIsScannStart={onToggleStartScann} setMode={setMode} mode={mode} />
+      <ControlPanel setIsScannStart={onStartScann} setMode={setMode} mode={mode} />
     </>
   );
 }
