@@ -9,7 +9,10 @@ const BarcodeCard = ({ barcode }) => {
       {barcode ? (
         <div className={scss.barcodeCardContent}>
           <div className={scss.barcodeCardMenu}>
-            <Link link={'https://www.google.com/search?q=' + barcode}>
+            <Link
+              className={scss.barcodeCardMenuButton}
+              link={'https://www.google.com/search?q=' + barcode}
+            >
               <Icon iconName="search" className={scss.barcodeCardMenuIcon} />
             </Link>
           </div>

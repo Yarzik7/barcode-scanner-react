@@ -6,7 +6,7 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
     if (!deviceId) {
       return;
     }
-    
+
     Quagga.init(
       {
         inputStream: {
