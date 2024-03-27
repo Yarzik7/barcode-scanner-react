@@ -7,6 +7,7 @@ export const useVideoDevices = () => {
 
   useEffect(() => {
     const getVideoDevices = async () => {
+      await navigator.mediaDevices.getUserMedia({ video: true });
       const devices = await navigator.mediaDevices.enumerateDevices();
       const videoinputDevices = devices.filter(({ kind }) => kind === 'videoinput');
       const betterVideoDevice = videoinputDevices
