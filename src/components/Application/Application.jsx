@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import Section from '../Section/Section';
 import BarcodeScanner from 'components/BarcodeScanner/BarcodeScanner';
 import Settings from 'components/Settings/Settings';
 import CreateBarcode from 'components/CreateBarcode/CreateBarcode';
-import { useState } from 'react';
 import scss from './Application.module.scss';
 
 const Application = ({
