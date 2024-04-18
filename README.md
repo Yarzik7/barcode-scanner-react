@@ -6,16 +6,16 @@
   <li>
     <h3>Create barcode</h3>
     <p>Allows to create a barcode image based on the value entered by the user</p>
-    <img src="./public/images/ReadMe/Create-barcode.jpg" alt="Create barcode"/>
+    <img src="./public/images/ReadMe/Create-barcode.jpg" alt="Create barcode" width="250" height="500"/>
   </li>
     <li>
     <h3>Barcode scanning</h3>
     <p>It is possible to scan the barcode from the product</p>
-    <img src="./public/images/ReadMe/Scanning.jpg" alt="Barcode scanning"/>
+    <img src="./public/images/ReadMe/Scanning.jpg" alt="Barcode scanning" width="250" height="500"/>
   </li>
     <li>
     <h3>Camera selection</h3>
     <p>There is an option to select a camera for scanning</p>
-    <img src="./public/images/ReadMe/Settings.jpg" alt="Create barcode"/>
+    <img src="./public/images/ReadMe/Settings.jpg" alt="Create barcode" width="250" height="500"/>
   </li>
 </ul>
