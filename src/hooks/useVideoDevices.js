@@ -7,7 +7,19 @@ export const useVideoDevices = () => {
 
   useEffect(() => {
     const getVideoDevices = async () => {
-      // await navigator.mediaDevices.getUserMedia({ video: true });
+      await navigator.mediaDevices.getUserMedia({ video: true });
+
+      // if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
+      //   // safely access `navigator.mediaDevices.getUserMedia`
+      //   let res;
+      //   try {
+      //     res = await navigator.mediaDevices.getUserMedia({ video: true });
+      //   } catch (error) {
+      //     console.log(error);
+      //   }
+      //   console.log(res);
+      // }
+
       const devices = await navigator.mediaDevices.enumerateDevices();
       const videoinputDevices = devices.filter(({ kind }) => kind === 'videoinput');
       const betterVideoDevice = videoinputDevices
