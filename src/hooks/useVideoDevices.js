@@ -16,7 +16,6 @@ export const useVideoDevices = () => {
       }
 
       const devices = await navigator.mediaDevices.enumerateDevices();
-      console.log(devices);
       const videoinputDevices = devices.filter(({ kind }) => kind === 'videoinput');
 
       if (!videoinputDevices[0]?.deviceId) {

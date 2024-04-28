@@ -3,7 +3,12 @@ import { classNameJoin } from 'utils';
 
 const Link = ({ link, className = '', children }) => {
   return (
-    <a href={link} className={classNameJoin(scss.link, className)}>
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      className={classNameJoin(scss.link, className)}
+    >
       {children}
     </a>
   );
