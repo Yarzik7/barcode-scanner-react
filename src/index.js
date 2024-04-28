@@ -1,12 +1,12 @@
-import React from 'react';
+import adapter from 'webrtc-adapter';
 import ReactDOM from 'react-dom/client';
 import './styles/variables.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+console.log(adapter.browserDetails.browser);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <App />
-);
+root.render(<App />);
 reportWebVitals();
