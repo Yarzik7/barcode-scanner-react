@@ -1,16 +1,14 @@
 import Select from '../Select/Select';
-import { useVideoDevices } from 'hooks';
 import scss from './Settings.module.scss';
 
-const Settings = ({ deviceName, onSetScannDevice }) => {
-  const { videoDevicesList } = useVideoDevices();
+const Settings = ({ deviceName, onSetScannDevice, videoDevicesList }) => {
   return (
     <div className={scss.settingsContainer}>
       <div className={scss.settingsContentBox}>
         <Select
           onSetScannDevice={onSetScannDevice}
           deviceName={deviceName}
-          videoDevicesList={videoDevicesList}
+          optionsList={videoDevicesList}
           label="Camera"
         />
       </div>

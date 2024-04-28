@@ -11,6 +11,7 @@ const Application = ({
   deviceId,
   mode,
   onSetScannDevice,
+  videoDevicesList,
   deviceName,
 }) => {
   const [barcode, setBarcode] = useState('');
@@ -27,7 +28,11 @@ const Application = ({
       )}
 
       {mode === 'settings' && (
-        <Settings onSetScannDevice={onSetScannDevice} deviceName={deviceName} />
+        <Settings
+          onSetScannDevice={onSetScannDevice}
+          deviceName={deviceName}
+          videoDevicesList={videoDevicesList}
+        />
       )}
 
       {mode === 'createcode' && <CreateBarcode />}

@@ -4,7 +4,12 @@ import { useState, useId } from 'react';
 import { classNameJoin } from 'utils';
 import scss from './Select.module.scss';
 
-const Select = ({ videoDevicesList, deviceName, onSetScannDevice, label = 'label' }) => {
+const Select = ({
+  optionsList: videoDevicesList,
+  deviceName,
+  onSetScannDevice,
+  label = 'label',
+}) => {
   const [showOptionList, setShowOptionList] = useState(false);
   const selectId = useId();
 
