@@ -8,9 +8,8 @@ export const useVideoDevices = () => {
   useEffect(() => {
     const getVideoDevices = async () => {
       if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
-        let res;
         try {
-          res = await navigator.mediaDevices.getUserMedia({ video: true });
+          await navigator.mediaDevices.getUserMedia({ video: true });
         } catch (error) {
           console.log(error);
         }
