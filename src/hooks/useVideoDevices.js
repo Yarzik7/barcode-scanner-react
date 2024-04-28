@@ -20,6 +20,10 @@ export const useVideoDevices = () => {
 
       const devices = await navigator.mediaDevices.enumerateDevices();
       const videoinputDevices = devices.filter(({ kind }) => kind === 'videoinput');
+      console.log('list', videoinputDevices);
+      console.log('0', videoinputDevices[0]);
+      console.log('1', videoinputDevices[1]);
+      console.log('9', videoinputDevices[9]);
       const betterVideoDevice = videoinputDevices
         .map(device => {
           const capabilities = device.getCapabilities();
