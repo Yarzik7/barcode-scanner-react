@@ -4,6 +4,7 @@ export const useVideoDevices = () => {
   const [videoDevicesList, setVideoDevicesList] = useState([]);
   const [betterDeviceId, setBetterDeviceId] = useState('');
   const [betterDeviceName, setBetterDeviceName] = useState('');
+  const [cameraAccessError, setCameraAccessError] = useState(null);
 
   useEffect(() => {
     const getVideoDevices = async () => {
@@ -19,6 +20,7 @@ export const useVideoDevices = () => {
       const videoinputDevices = devices.filter(({ kind }) => kind === 'videoinput');
 
       if (!videoinputDevices[0]?.deviceId) {
+        setCameraAccessError('Unable to access device camera!');
         return;
       }
 
@@ -38,5 +40,5 @@ export const useVideoDevices = () => {
     getVideoDevices();
   }, []);
 
-  return { videoDevicesList, betterDeviceId, betterDeviceName };
+  return { videoDevicesList, betterDeviceId, betterDeviceName, cameraAccessError };
 };

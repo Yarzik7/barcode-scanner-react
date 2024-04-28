@@ -5,11 +5,13 @@ import { useVideoDevices } from 'hooks';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const { betterDeviceId, betterDeviceName, videoDevicesList } = useVideoDevices();
+  const { betterDeviceId, betterDeviceName, videoDevicesList, cameraAccessError } =
+    useVideoDevices();
   const [deviceId, setDeviceId] = useState(() => betterDeviceId);
   const [deviceName, setDeviceName] = useState('');
   const [isStartScann, setIsScannStart] = useState(true);
   const [mode, setMode] = useState('codescanner');
+  // const [errors, setErrors] = useState({ cameraAccess: null, scannerInit: null });
 
   useEffect(() => {
     setDeviceId(betterDeviceId);
@@ -34,6 +36,7 @@ function App() {
           onSetScannDevice={onSetScannDevice}
           deviceName={deviceName}
           videoDevicesList={videoDevicesList}
+          cameraAccessError={cameraAccessError}
           mode={mode}
         />
       </main>

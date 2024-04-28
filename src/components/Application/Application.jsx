@@ -13,6 +13,7 @@ const Application = ({
   onSetScannDevice,
   videoDevicesList,
   deviceName,
+  cameraAccessError,
 }) => {
   const [barcode, setBarcode] = useState('');
   return (
@@ -23,6 +24,7 @@ const Application = ({
           deviceId={deviceId}
           isStartScann={isStartScann}
           setIsScannStart={setIsScannStart}
+          cameraAccessError={cameraAccessError}
           barcode={barcode}
         />
       )}

@@ -5,6 +5,7 @@
   --primary-text-color: #121212;
   --secondary-text-color: #fff;
   --bg-light-color: rgba(148, 148, 148, 0.2);
+  --errors-color: #fa2525;
 
   /* sizes */
   --primary-border-radius: 7px;
