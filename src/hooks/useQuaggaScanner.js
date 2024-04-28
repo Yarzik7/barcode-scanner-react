@@ -16,7 +16,7 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
           constraints: {
             width: 800,
             height: 1080,
-            // facingMode: 'environment',
+            facingMode: 'environment',
             deviceId,
           },
           area: {

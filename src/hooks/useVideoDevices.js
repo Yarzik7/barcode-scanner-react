@@ -7,7 +7,6 @@ export const useVideoDevices = () => {
 
   useEffect(() => {
     const getVideoDevices = async () => {
-      console.log(navigator.mediaDevices.getUserMedia);
       if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
         let res;
         try {
@@ -15,15 +14,16 @@ export const useVideoDevices = () => {
         } catch (error) {
           console.log(error);
         }
-        console.log(res);
       }
 
       const devices = await navigator.mediaDevices.enumerateDevices();
+      console.log(devices);
       const videoinputDevices = devices.filter(({ kind }) => kind === 'videoinput');
-      console.log('list', videoinputDevices);
-      console.log('0', videoinputDevices[0]);
-      console.log('1', videoinputDevices[1]);
-      console.log('9', videoinputDevices[9]);
+
+      if (!videoinputDevices[0]?.deviceId) {
+        return;
+      }
+
       const betterVideoDevice = videoinputDevices
         .map(device => {
           const capabilities = device.getCapabilities();
