@@ -1,3 +1,4 @@
-import { classNameJoin } from "./classNameJoin";
+import { classNameJoin } from './classNameJoin';
+import { getCameraAccess } from './getCameraAccess';
 
-export { classNameJoin };
+export { classNameJoin, getCameraAccess };
