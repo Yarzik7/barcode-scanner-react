@@ -11,7 +11,6 @@ function App() {
   const [deviceName, setDeviceName] = useState('');
   const [isStartScann, setIsScannStart] = useState(true);
   const [mode, setMode] = useState('codescanner');
-  // const [errors, setErrors] = useState({ cameraAccess: null, scannerInit: null });
 
   useEffect(() => {
     setDeviceId(betterDeviceId);
