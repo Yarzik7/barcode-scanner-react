@@ -1,19 +1,25 @@
+import { useState } from 'react';
+
+import { INVALID_CHARS_REGEXP } from 'constants/barcode/regexp';
+
 import Input from 'components/Input/Input';
 import BarcodeCard from 'components/BarcodeCard/BarcodeCard';
-import { useState } from 'react';
+
 import scss from './CreateBarcode.module.scss';
 
 const CreateBarcode = () => {
   const [barcode, setBarcode] = useState('');
 
-  const onChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'barcode':
-        setBarcode(value);
-        break;
-      default:
-        return;
+  const onChange = event => {
+    const { value } = event.target;
+
+    if (INVALID_CHARS_REGEXP.test(value)) {
+      event.preventDefault();
+      event.target.value = barcode;
+      return;
     }
+
+    setBarcode(value);
   };
 
   return (
